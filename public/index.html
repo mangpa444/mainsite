@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="%PUBLIC_URL%/sitemap.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="%PUBLIC_URL%/sitemap2.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="%PUBLIC_URL%/%PUBLIC_URL%">
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  
+    
+    
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <div id="root"></div>
+       <script>
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect != window.location.href) {
+          var url = new URL(redirect);
+          var p = url.searchParams.get('p');
+          if (p) {
+            history.replaceState(null, null, p);
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>

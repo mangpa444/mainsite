@@ -1,0 +1,419 @@
+/* Base styles */
+.cart-container {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0 auto;
+  position: relative;
+  max-width: 100%;
+}
+
+.cart-container.dark-mode {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.divider {
+  border-top: 1px dashed #dee2e6;
+  margin: 0.5rem 0;
+}
+
+.cart-container.dark-mode .divider {
+  border-top: 1px dashed #495057;
+}
+
+/* Enhanced Visual Hierarchy */
+.list-group-item h3 {
+  font-weight: bold;
+  color: #343a40;
+  font-size: 1.25rem;
+}
+
+.list-group-item p {
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+.list-group-item p strong {
+  color: #343a40;
+}
+
+/* Hover Effect for Items */
+.list-group-item:hover {
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease;
+}
+
+/* Dark mode styles */
+.cart-container.dark-mode .btn-outline-secondary {
+  border-color: #adb5bd;
+  color: #adb5bd;
+}
+
+.cart-container.dark-mode .btn-outline-secondary:hover {
+  background-color: #adb5bd;
+  color: #343a40;
+}
+
+.cart-container.dark-mode .list-group {
+  background-color: #495057;
+  border-color: #6c757d;
+}
+
+.cart-container.dark-mode .list-group-item {
+  background-color: #343a40;
+  border-color: #6c757d;
+  color: #f8f9fa;
+}
+
+.cart-container.dark-mode .list-group-item .img-container {
+  border-color: #6c757d;
+}
+
+.cart-container.dark-mode .list-group-item h3,
+.cart-container.dark-mode .list-group-item p {
+  color: #f8f9fa;
+}
+
+/* Trash Icon */
+.btn-remove {
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: #ffffff;
+  background-color: #dc3545;
+  border: none;
+  border-radius: 4px;
+ margin-left:.5rem!important ;
+ 
+}
+
+.btn-remove i {
+  margin: 0;
+}
+
+.btn-remove:hover {
+  background-color: #c82333;
+}
+
+/* Quantity Control */
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.btn-minus, .btn-plus {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: 1.25rem;
+  border-radius: 4px;
+}
+
+.btn-minus {
+  margin-right: 0.5rem;
+}
+
+.btn-plus {
+  margin-left: 0.5rem;
+}
+
+/* Quantity Input */
+.quantity {
+  width: 50px;
+  text-align: center;
+  padding: 0.25rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background-color: #ffffff;
+}
+
+/* Layout Adjustments */
+.list-group-item .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.list-group-item .img-container {
+  flex: 1;
+}
+
+.list-group-item .item-details {
+  flex: 2;
+  padding-left: 1rem;
+
+}
+
+.list-group-item .quantity-control,
+.list-group-item .btn-minus,
+.list-group-item .btn-plus {
+  flex: 0 0 auto;
+}
+
+
+
+/* Collapsible Cart Summary */
+@media (max-width: 768px) {
+  .cart-summary {
+    display: none;
+  }
+
+  .cart-summary.collapsible {
+    display: block;
+  }
+}
+
+.cart-summary-toggle {
+  display: block;
+  cursor: pointer;
+  font-size: 14px;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.cart-summary-toggle:hover {
+  text-decoration: underline;
+}
+
+/* General layout improvements */
+.header, .footer {
+  margin-bottom: 0;
+}
+
+.site-main {
+  margin-right: 0;
+}
+
+.input-group.mo-3.mb-3 {
+  width: 60% !important;
+}
+.btn-print{
+  margin-top: 1rem;
+
+}
+
+.no-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
+.no-link:hover {
+  text-decoration: none; /* Ensure no underline on hover */
+}
+
+/* Print styles */
+@media print {
+  .cart-container {
+    border-radius: 0;
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: static;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+   .sticky-header {
+    position: static !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  body {
+    padding-top: 0 !important;
+  }
+
+
+  
+  .btn, .site-footer, .quantity, .search-container{
+    display: none !important; /* Remove all buttons and footer */
+  }
+
+ 
+ * {
+        -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+        print-color-adjust: exact !important;         /* Firefox */
+        background: transparent !important;
+        box-shadow: none !important;
+
+    }
+ .site-header {
+        page-break-after: avoid;
+    }
+
+    .cart-container {
+        page-break-before: avoid;
+    }
+
+    
+  @page {
+    size: A4;
+    margin: 5mm;
+  }
+
+  .cart-container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .cart-container .list-group {
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+  }
+
+  .cart-container .list-group-item {
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+    page-break-inside: avoid;
+    border-bottom: 1px dashed #000000;
+  }
+
+  .cart-container .list-group-item img {
+    width: 4in;
+    height: 4in;
+    object-fit: contain;
+    margin-right: 0.5rem;
+  }
+
+  .cart-container .list-group-item .item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 4in - 0.5rem);
+    
+  }
+
+  
+  .cart-container .list-group-item h3 {
+    font-size: 10px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: medium;
+     color: #000000 !important;
+  }
+
+  .cart-container .list-group-item p {
+    font-size: 8px;
+    margin: 0;
+     color: #000000 !important;
+     font-size: medium;
+  }
+
+  .cart-container .list-group-item .category-quantity {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart-container .list-group-item .category {
+    font-size: 8px;
+  }
+
+  .cart-container .list-group-item .quantity {
+    font-size: 8px;
+  }
+
+  .page-break {
+    page-break-before: always;
+    clear: both;
+  }
+
+  .last-page-list {
+    margin-top: 1rem;
+    border-top: 1px solid #000000;
+    padding-top: 0.5rem;
+  }
+
+  .last-page-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .last-page-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #000000;
+    font-size: 15px;
+  }
+
+  .list-group-item:nth-of-type(n+7) {
+    display: none;
+  }
+
+  /* Contact Information */
+  .contact-info {
+    margin-top: 1rem;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+
+  /* Add contact info below the cart summary */
+  .cart-summary:after {
+    content: "Contact Us  Email: info@trustglobal.com.bd Phone: +880 1938775447";
+    white-space: pre-wrap;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 1rem;
+  }
+
+  .cart-summary:after a {
+    color: #007bff;
+  }
+
+  .cart-summary:after a:hover {
+    text-decoration: underline;
+  }
+}
+
+
+.bold-button {
+    width: 20%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.quantity {
+ width: 40% !important; 
+}

@@ -1,0 +1,223 @@
+/* Base styles */
+.cart-container {
+  background-color: #f8f9fa;
+  color: #343a40;
+  border-radius: 8px; /* Rounded corners */
+  padding: 1rem;
+  margin: 0 auto;
+  position: relative;
+  max-width: 100%; /* Ensure container uses full width */
+}
+.btn-search{
+  height: 100% !important; /* Match height of the input */
+  
+  padding: 0.5rem 1rem !important;
+  margin-left: 2rem !important;
+
+}
+.form-control{
+  border-radius: 0.5rem !important; 
+}
+
+.cart-container.dark-mode {
+  background-color: #343a40;
+  color: #f8f9fa;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px; /* Adjusted size */
+  height: 120px; /* Adjusted size */
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.img-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.divider {
+  border-top: 1px dashed #dee2e6; /* Dashed line for print */
+  margin: 0.5rem 0;
+}
+
+.cart-container.dark-mode .divider {
+  border-top: 1px dashed #495057;
+}
+
+/* Dark mode styles */
+.cart-container.dark-mode .btn-outline-secondary {
+  border-color: #adb5bd;
+  color: #adb5bd;
+}
+
+.cart-container.dark-mode .btn-outline-secondary:hover {
+  background-color: #adb5bd;
+  color: #343a40;
+}
+
+/* Dark mode for list-group */
+.cart-container.dark-mode .list-group {
+  background-color: #495057;
+  border-color: #6c757d;
+}
+
+.cart-container.dark-mode .list-group-item {
+  background-color: #343a40;
+  border-color: #6c757d;
+  color: #f8f9fa;
+}
+
+.cart-container.dark-mode .list-group-item .img-container {
+  border-color: #6c757d;
+}
+
+.cart-container.dark-mode .list-group-item h3,
+.cart-container.dark-mode .list-group-item p {
+  color: #f8f9fa;
+}
+
+/* Print styles */
+@media print {
+  .cart-container {
+    border-radius: 0; /* Remove rounded corners for print */
+    box-shadow: none; /* Remove shadows for print */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: static; /* Ensure no position issues */
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .btn, .header, .footer {
+    display: none; /* Hide buttons and header/footer for print */
+  }
+
+  @page {
+    size: A4;
+    margin: 10mm; /* Adjust margins as needed */
+  }
+
+  .cart-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .cart-container .list-group {
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+  }
+
+  .cart-container .list-group-item {
+    background-color: #ffffff !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+    display: flex;
+    align-items: center;
+    border: none; /* Remove border for print */
+    margin-bottom: 0; /* Remove margin */
+    padding: 0.5rem 0; /* Adjust padding */
+    page-break-inside: avoid; /* Avoid breaking items across pages */
+    border-bottom: 1px dashed #000000; /* Dashed line separator */
+  }
+
+  .cart-container .list-group-item img {
+    width: 4in; /* Set image width for print */
+    height: 4in; /* Set image height for print */
+    object-fit: contain;
+    margin-right: 0.5rem; /* Reduced space between image and text */
+  }
+
+  .cart-container .list-group-item .item-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(100% - 4in - 0.5rem); /* Adjust width for text columns */
+  }
+
+  .cart-container .list-group-item h3 {
+    font-size: 10px; /* Decrease font size */
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%; /* Ensure name fits */
+  }
+
+  .cart-container .list-group-item p {
+    font-size: 8px; /* Decrease font size */
+    margin: 0;
+  }
+
+  .cart-container .list-group-item .category-quantity {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart-container .list-group-item .category {
+    font-size: 8px; /* Decrease font size */
+  }
+
+  .cart-container .list-group-item .quantity {
+    font-size: 8px; /* Decrease font size */
+  }
+
+  .page-break {
+    page-break-before: always;
+    clear: both;
+  }
+
+  .last-page-list {
+    margin-top: 1rem;
+    border-top: 1px solid #000000;
+    padding-top: 0.5rem;
+  }
+
+  .last-page-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .last-page-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #000000;
+    font-size: 8px; /* Smaller font size for summary */
+  }
+
+  /* Limit number of products per page */
+  .list-group-item:nth-of-type(n+7) {
+    display: none; /* Hide items beyond the 6th for each page */
+  }
+}
+
+/* Print button style */
+.print-button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
+
+/* Adjust margin and padding for better spacing */
+.container.mt-5 {
+  margin-top: 1rem; /* Reduced margin */
+}
+
+.cart-summary,
+.contact-info {
+  margin-bottom: 1rem; /* Reduced margin */
+  color: #343a40; /* Ensure font color matches cart summary */
+}
+
+/* General layout improvements */
+.header, .footer {
+  margin-bottom: 0; /* Ensure no extra space between container and header/footer */
+}
+
